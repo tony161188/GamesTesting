@@ -33,3 +33,24 @@ def toggle_tongue():
         c.itemconfigure(tongue_tip, state=HIDDEN)
         c.itemconfigure(tongue_main, state=HIDDEN)
         c.tongue_out = False
+
+
+def toggle_pupils():
+    if not c.eyes_crossed:
+        c.move(pupil_left, 10, -5)
+        c.move(pupil_right, -10, -5)
+        c.eyes_crossed = True
+    else:
+        c.move(pupil_left, -10, 5)
+        c.move(pupil_right, 10, 5)
+        c.eyes_crossed = False
+
+def toggle_tongue():
+    if not c.tongue_out:
+        c.itemconfigure(tongue_tip, state=NORMAL)
+        c.itemconfigure(tongue_main, state=NORMAL)
+        c.tongue_out = True
+    else:
+        c.itemconfigure(tongue_tip, state=HIDDEN)
+        c.itemconfigure(tongue_main, state=HIDDEN)
+        c.tongue_out = False
